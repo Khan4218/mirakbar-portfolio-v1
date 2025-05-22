@@ -1,0 +1,65 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Mir Akbar Ali Khan</title>
+  <link rel="stylesheet" href="styles/contact.css" />
+
+</head>
+
+<body>
+  <header>
+    <h1>Mir Akbar Ali Khan</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="resume.html">Resume</a>
+
+    </nav>
+  </header>
+
+  <main>
+    <div class="contact-box">
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Mir Akbar Ali Khan | All Rights Reserved.
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (name && email && message) {
+        alert(`Thanks, ${name}! Your message has been sent.`);
+        this.reset();
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+  </script>
+</body>
+
+</html>
