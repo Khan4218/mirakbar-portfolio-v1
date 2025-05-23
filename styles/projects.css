@@ -86,6 +86,13 @@ h2 {
   font-weight: bold;
 }
 
+.card a:hover {
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #ffd700;
+}
+
 footer {
   text-align: center;
   padding: 20px;
