@@ -56,10 +56,25 @@ function setupScrollButton() {
     return;
   }
 
+  scrollArrow.style.display = 'flex'; // ensure visible on load (flex, not block)
+
   scrollArrow.addEventListener('click', () => {
     if (reactSection) {
-      reactSection.scrollIntoView({ behavior: 'smooth' });
-      scrollArrow.style.display = 'none'; // Hide button after click
+      const offset = 100; // pixels to scroll further down, adjust as needed
+      const topPos = reactSection.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: topPos + offset,
+        behavior: 'smooth'
+      });
+
+    }
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY < 200) {
+      scrollArrow.style.display = 'flex'; // show again when near top
+    } else {
+      scrollArrow.style.display = 'none'; // hide when scrolled down
     }
   });
 }
