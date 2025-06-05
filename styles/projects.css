@@ -264,3 +264,16 @@ footer {
   outline: 3px solid #1f3b70;
   outline-offset: 3px;
 }
+
+@media (max-width: 600px) {
+  #scroll-arrow {
+    top: 150px;
+    /* push it down more on small screens */
+    right: 15px;
+    /* adjust right margin if needed */
+    font-size: 0.9rem;
+    /* slightly smaller font for small screens */
+    padding: 8px 12px;
+    /* adjust padding for better fit */
+  }
+}
