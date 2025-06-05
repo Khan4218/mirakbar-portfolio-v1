@@ -23,7 +23,7 @@ const projects = [
   }
 ];
 
-// Render project cards into container
+// Render React project cards into container
 function renderProjects() {
   const container = document.getElementById("projects-container");
   if (!container) return;
@@ -33,56 +33,38 @@ function renderProjects() {
     card.className = "project-card";
 
     card.innerHTML = `
-          <h3>${proj.name}</h3>
-          <p>${proj.description}</p>
-          <p><strong>Tech Stack:</strong> ${proj.tech}</p>
-          <p>
-            ${proj.live ? `<a href="${proj.live}" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a> | ` : ""}
-            <a href="${proj.github}" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
-          </p>
-        `;
+      <h3>${proj.name}</h3>
+      <p>${proj.description}</p>
+      <p><strong>Tech Stack:</strong> ${proj.tech}</p>
+      <p>
+        ${proj.live ? `<a href="${proj.live}" target="_blank" rel="noopener noreferrer">🔗 Live Demo</a> | ` : ""}
+        <a href="${proj.github}" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+      </p>
+    `;
 
     container.appendChild(card);
   });
 }
 
-// Scroll to projects section when arrow clicked or keyboard "Enter"
-function setupScrollIndicator() {
-  const scrollIndicator = document.querySelector(".scroll-indicator");
-  const reactSection = document.querySelector(".react-section");
+// Setup scroll button behavior
+function setupScrollButton() {
+  const scrollArrow = document.getElementById('scroll-arrow');
+  const reactSection = document.querySelector('.react-section');
 
-  function scrollToProjects() {
-    if (reactSection) {
-      reactSection.scrollIntoView({ behavior: "smooth" });
-    }
+  if (!scrollArrow) {
+    console.warn('scroll-arrow element not found!');
+    return;
   }
 
-  scrollIndicator.addEventListener("click", scrollToProjects);
-  scrollIndicator.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      scrollToProjects();
-      e.preventDefault();
+  scrollArrow.addEventListener('click', () => {
+    if (reactSection) {
+      reactSection.scrollIntoView({ behavior: 'smooth' });
+      scrollArrow.style.display = 'none'; // Hide button after click
     }
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
-  setupScrollIndicator();
+  setupScrollButton();
 });
-
-document.getElementById('scroll-arrow').addEventListener('click', () => {
-  const reactSection = document.querySelector('.react-section');
-  if (reactSection) {
-    reactSection.scrollIntoView({ behavior: 'smooth' });
-  }
-});
-
-document.getElementById('scroll-arrow').addEventListener('click', function () {
-  const reactSection = document.querySelector('.react-section');
-  if (reactSection) {
-    reactSection.scrollIntoView({ behavior: 'smooth' });
-  }
-  this.style.display = 'none';
-});
-
