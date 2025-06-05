@@ -77,3 +77,12 @@ document.getElementById('scroll-arrow').addEventListener('click', () => {
     reactSection.scrollIntoView({ behavior: 'smooth' });
   }
 });
+
+document.getElementById('scroll-arrow').addEventListener('click', function () {
+  const reactSection = document.querySelector('.react-section');
+  if (reactSection) {
+    reactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+  this.style.display = 'none';
+});
+
