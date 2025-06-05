@@ -267,9 +267,9 @@ footer {
 
 @media (max-width: 600px) {
   #scroll-arrow {
-    top: 150px;
+    top: 200px;
     /* push it down more on small screens */
-    right: 15px;
+    right: 19px;
     /* adjust right margin if needed */
     font-size: 0.9rem;
     /* slightly smaller font for small screens */
