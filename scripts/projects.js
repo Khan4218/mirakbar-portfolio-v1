@@ -4,8 +4,15 @@ const projects = [
     name: "Chef Claude – AI Recipe Generator",
     description: "Generates custom recipes using AI based on ingredients entered by the user.",
     tech: "React, Hugging Face API, Markdown, CSS",
-    live: "https://akbar-project-3-chef-claude.netlify.app",
+    live: "https://akbar-chef-claude-project-3.netlify.app/",
     github: "https://github.com/Khan4218/Chef-Claude-project-3"
+  },
+  {
+    name: "React Meme Generator",
+    description: "A fun meme generator app that fetches meme images and lets users add custom text.",
+    tech: "React, useState, useEffect, API, CSS",
+    live: "https://react-meme-generator-akbar.netlify.app/",
+    github: "https://github.com/Khan4218/React-Meme-Generator-project-4"
   },
   {
     name: "React Travel Journal",
